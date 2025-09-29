@@ -151,6 +151,7 @@ main {
     border: 2px solid #d7baad;
 }
 
+/* Texto noticia */
 .noticia-article p {
     margin-bottom: 25px;
     color: #2c3e50;
@@ -158,6 +159,7 @@ main {
     line-height: 1.6;
 }
 
+/* Botón Ver más */
 .btn-ver-mas {
     background: linear-gradient(135deg, #527c88 0%, #89dee2 100%);
     color: white;
