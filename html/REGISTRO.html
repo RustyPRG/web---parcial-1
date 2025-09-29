@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Salud Vital</title>
+    <link rel="stylesheet" href="../css/registro.css">
+</head>
+<body>
+
+    <header>
+        <h1>Salud Vital</h1>
+        
+        <!--Menu de navegacion entre paginas con una UL-->
+        <nav>
+            <ul>
+                <li><a href="HOME.html">Home</a></li>
+                <li><a href="REGISTRO.html" class="active">Registro</a></li>
+                <li><a href="BLOG.html">Blog</a></li>
+                <li><a href="CONTACTO.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="form-container">
+            <h1>Salud Vital</h1>
+            <h2>Registro de Usuario</h2>
+            
+            <form class="registro-form">
+                
+                <!-- Nombre completo -->
+                <div class="form-field">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" placeholder="Ingresa tu nombre completo" required>
+                </div>
+                
+                <!-- Fecha de nacimiento -->
+                <div class="form-field">
+                    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha-nacimiento" required>
+                </div>
+                
+                <!-- Correo electrónico -->
+                <div class="form-field">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+                </div>
+                
+                <!-- Número telefónico -->
+                <div class="form-field">
+                    <label for="telefono">Número Telefónico:</label>
+                    <input type="tel" id="telefono" pattern="[0-9]{4}-[0-9]{4}" placeholder="1234-5678" required>
+                </div>
+                
+                <!-- Género -->
+                <div class="gender-field">
+                    <label>Género:</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="genero" value="masculino">
+                            <span>Masculino</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="genero" value="femenino">
+                            <span>Femenino</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="genero" value="otro">
+                            <span>Otro</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Dirección -->
+                <div class="form-field">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" placeholder="Calle, número, ciudad, código postal" required>
+                </div>
+                
+                <!-- Peso y Altura en la misma fila -->
+                <div class="weight-height-grid">
+                    <div class="form-field">
+                        <label for="peso">Peso (kg):</label>
+                        <input type="number" id="peso" placeholder="70" min="30" max="200" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="altura">Altura (cm):</label>
+                        <input type="number" id="altura" placeholder="170" min="100" max="250" required>
+                    </div>
+                </div>
+                
+                <!-- Nivel de actividad física -->
+                <div class="form-field">
+                    <label for="actividad">Nivel de Actividad Física:</label>
+                    <select id="actividad" required>
+                        <option value="">Selecciona tu nivel de actividad</option>
+                        <option value="sedentario">Sedentario</option>
+                        <option value="ligero">Ligero</option>
+                        <option value="moderado">Moderado</option>
+                        <option value="intenso">Intenso</option>
+                    </select>
+                </div>
+                
+                <!-- Objetivo nutricional -->
+                <div class="objectives-field">
+                    <label>Objetivo Nutricional (puedes seleccionar varios):</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="objetivo" value="perder-peso">
+                            <span>Perder peso</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="objetivo" value="ganar-masa">
+                            <span>Ganar masa muscular</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="objetivo" value="mejorar-salud">
+                            <span>Mejorar la salud</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Alergias o restricciones -->
+                <div class="form-field">
+                    <label for="alergias">Alergias o Restricciones Alimentarias:</label>
+                    <textarea id="alergias" placeholder="Describe cualquier alergia o restricción alimentaria que tengas..." rows="4"></textarea>
+                </div>
+                
+                <!-- Cantidad de agua -->
+                <div class="water-field">
+                    <label>Cantidad Diaria de Agua Consumida:</label>
+                    <div class="water-controls">
+                        <input type="range" id="agua" class="water-slider" min="0.5" max="5" step="0.1" value="2" oninput="document.getElementById('aguaOutput').value = this.value">
+                        <output id="aguaOutput" class="water-output">2</output>
+                        <span class="water-label">litros</span>
+                    </div>
+                </div>
+                
+                <!-- Foto de alimentos -->
+                <div class="form-field">
+                    <label for="foto">Foto de Alimentos Comunes:</label>
+                    <input type="file" id="foto" accept="image/*">
+                </div>
+                
+                <!-- Hora de comida principal -->
+                <div class="form-field">
+                    <label for="hora-comida">Hora Habitual de la Comida Principal:</label>
+                    <input type="time" id="hora-comida" required>
+                </div>
+                
+                <!-- Botón de envío -->
+                <button type="submit" class="submit-btn">Registrarse</button>
+                
+            </form>               
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#preguntas">Preguntas Frecuentes</a>
+                <a href="#privacidad">Política de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            
+            <div class="language-selector">
+                <span>Idioma:</span>
+                <select>
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
