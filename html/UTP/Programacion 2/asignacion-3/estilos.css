@@ -1,0 +1,362 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/*deportivas*/
+/*para hacer un margin top del header*/
+.main{
+    margin-top: 40px;
+}
+
+/*para encerrar a todos los videos y su descripcion dentro del mismo cuadro*/
+.cuerpo{
+    text-align: center;
+    background-color: white;
+    width: 1100px;
+    margin:auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+/*clase para que el video y su texto este alineado en fila*/
+.videos{
+    display:flex;
+    align-items: flex-start; 
+    margin-bottom: 20px;
+}
+
+/*espacio entre video y texto*/
+.videos video{
+    margin-right: 20px;
+}
+
+/*parametros del texto del video*/
+.descripcion{
+    text-align: left;
+    display:flex;
+    align-items: flex-start ;
+    flex-direction: column;
+    margin-top: 50px;
+}
+/*se uso news-title y news-text para el parrafo y el h1*/
+
+/* inicio*/
+
+/* Definición de fuentes personalizadas */
+/* Fuente para títulos - Georgia (serif, elegante para títulos) */
+/* Fuente para contenido - Arial (sans-serif, legible para texto) */
+
+body {
+    font-family: Arial, sans-serif; /* Fuente para contenido regular */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Estilos para títulos - fuente diferente */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif; /* Fuente especial para títulos */
+    color: #2c3e50;
+}
+
+/* Estilos para enlaces - sin subrayado y en negrita */
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold; /* Texto en negrita */
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* HEADER - Banner completo con logo y menú de navegación */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Banner del logo */
+.header-banner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.logo-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%; /* Opcional: si quieres que siga siendo redondo */
+    margin-right: 15px;
+}
+
+
+/* Menú de navegación principal */
+.main-nav {
+    background: rgba(0,0,0,0.2);
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-menu li {
+    margin: 5px 0;
+}
+
+.nav-menu a {
+    color: white;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.nav-menu a.active {
+    background-color: #e74c3c;
+}
+
+/* SECCIÓN PRINCIPAL - Noticias nacionales */
+section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.news-section-title {
+    font-family: Georgia, serif; /* Fuente de títulos */
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Contenedor de las 3 noticias principales */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* Cada artículo de noticia */
+.news-article {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.news-article:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen de cada noticia */
+.news-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(45deg, #3498db, #2c3e50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+
+/* Contenido de cada noticia */
+.news-content {
+    padding: 25px;
+}
+
+/* Título de cada noticia individual */
+.news-title {
+    font-family: Georgia, serif; /* Fuente de títulos */
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+/* Párrafo de contenido de cada noticia */
+.news-text {
+    font-family: Arial, sans-serif; /* Fuente regular para contenido */
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.news-date {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* FOOTER - Lista de navegación */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-nav {
+    text-align: left; /* Alineado a la izquierda según especificaciones */
+}
+
+.footer-nav h3 {
+    font-family: Georgia, serif; /* Fuente de títulos */
+    margin-bottom: 15px;
+    color: #ecf0f1;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav li {
+    margin-bottom: 8px;
+}
+
+.footer-nav a {
+    color: #bdc3c7; /* Color más tenue según especificaciones */
+    font-size: 0.9em; /* Letra más pequeña según especificaciones */
+    font-weight: bold; /* Mantiene negrita para enlaces */
+}
+
+.footer-nav a:hover {
+    color: #ecf0f1;
+}
+
+
+/* pagina de contactos*/
+        /* SECCIÓN PRINCIPAL - Información de contacto */
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-container {
+            padding: 40px;
+        }
+
+        .contact-title {
+            font-family: Georgia, serif; /* Fuente de títulos */
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+
+        /* Grid de integrantes del equipo */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .team-member {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Imagen placeholder para integrantes */
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: linear-gradient(45deg, #3498db, #2c3e50); /* Solo aplica a div */
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 150px;
+        }
+        
+        
+
+        .member-name {
+            font-family: Georgia, serif; /* Fuente de títulos para nombres */
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .member-description {
+            font-family: Arial, sans-serif; /* Fuente regular para descripción */
+            color: #555;
+            line-height: 1.6;
+            font-size: 1em;
+        }
+
+/*internacional*/
+
+.news-photo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}

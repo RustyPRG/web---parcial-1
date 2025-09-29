@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="../css/MainPgeStyle.css">
+    <script defer src="../js/calendar.js"></script> 
+</head>
+<body>
+    <!--the part in the left-->
+    <div class="sidebar">
+        <h2>Doctors</h2>
+        <!--to search doctors by id an show their appointments on the calendar-->
+        <input type="text" class="search-box" placeholder="Search Doctors by ID...">
+        <!--to filter on the calendar the appoints who appointment reason will be x category-->
+        <div class="dropdown">
+            <select id="therapist-filter">
+                <option selected>View All</option>
+                <option class="category">Dermatology</option>
+                <option class="category">Neurology</option>
+                <option class="category">Pediatrics</option>
+            </select>
+        </div>
+
+        <h2>Patients</h2>   
+        <!--to search patients by ID-->
+        <input type="text" class="search-box" placeholder="Search Patients by ID...">
+        <!--the button to launch the patient data on the input above in a pop-up window-->
+        <button class="opendata" onclick="abrirmodal()">Open pacient details</button>
+        <!--the pop-window hinding until its called-->
+        <div class="modal-overlay" id="modaloverlay">
+            <div class="modal">
+                <span class="close-btn" onclick="cerrarmodal()">&times;</span>
+                <!--the html who contain the pacient data-->
+                <iframe src="pacientdata.html"></iframe>
+            </div>
+
+        </div>
+    </div>
+    <!--the upper part of the page-->
+    <main class="main">
+        <nav class="navbar">
+            <!--to select date-->
+            <div class="date">
+                <select id="month-select"></select>
+                <select id="year-select"></select>
+                <!--button to add appointment-->
+                <button class="AddEvent">Add Appointment</button>
+            </div>
+            <!--exit button-->
+            <a href="Login.html">
+                <div class="goback">
+                    exit
+                </div>
+            </a>
+        </nav>
+        <!--calendar-->
+        <div class="calendar">
+            <div class="week-days">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wen</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days" id="days">
+                <!-- Los días se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </main>
+<!-- Modal to add appointments-->
+<div class="modal-overlay" id="appointmentModal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3>Add appointment</h3>
+            <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <!--form of the appointment-->
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="appointmentDate">Fecha:</label>
+                    <input type="date" id="appointmentDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentStartTime">Hora de inicio:</label>
+                    <input type="time" id="appointmentStartTime" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentEndTime">Hora de finalización:</label>
+                    <input type="time" id="appointmentEndTime" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentDoctor">Doctor:</label>
+                    <select id="appointmentDoctor" required>
+                        <!-- Se llenará dinámicamente con JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentPatient">Paciente:</label>
+                    <select id="appointmentPatient" required>
+                        <!-- Se llenará dinámicamente con JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentNotes">Notas:</label>
+                    <textarea id="appointmentNotes" rows="3"></textarea>
+                </div>
+                <!--to confirm or cancel the new appointment-->
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancelar</button>
+                    <button type="submit" class="save-btn">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

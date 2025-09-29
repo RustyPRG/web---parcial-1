@@ -1,0 +1,144 @@
+
+
+        /* SECCIÓN PRINCIPAL - Información de contacto */
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-container {
+            padding: 40px;
+        }
+
+        .contact-title {
+            font-family: Georgia, serif; /* Fuente de títulos */
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+
+        /* Grid de integrantes del equipo */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .team-member {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Imagen placeholder para integrantes */
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            
+        }
+        
+
+        .member-name {
+            font-family: Georgia, serif; /* Fuente de títulos para nombres */
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .member-description {
+            font-family: Arial, sans-serif; /* Fuente regular para descripción */
+            color: #555;
+            line-height: 1.6;
+            font-size: 1em;
+        }
+
+        /* FOOTER - Lista de navegación */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-nav {
+            text-align: left; /* Alineado a la izquierda según especificaciones */
+        }
+
+        .footer-nav h3 {
+            font-family: Georgia, serif; /* Fuente de títulos */
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 8px;
+        }
+
+        .footer-nav a {
+            color: #bdc3c7; /* Color más tenue según especificaciones */
+            font-size: 0.9em; /* Letra más pequeña según especificaciones */
+            font-weight: bold; /* Mantiene negrita para enlaces */
+        }
+
+        .footer-nav a:hover {
+            color: #ecf0f1;
+        }
+
+        /* Responsive design para dispositivos móviles */
+        @media (max-width: 768px) {
+            .header-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-text h1 {
+                font-size: 2em;
+            }
+            
+            .contact-container {
+                padding: 20px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        

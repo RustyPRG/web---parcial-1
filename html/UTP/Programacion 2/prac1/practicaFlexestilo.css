@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.principal{
+    display:flex;
+    flex-direction: column;
+
+            
+}
+
+.flex-container{
+    margin: 10px;
+}
+
+.flex-container div{
+    padding: 1px;
+    margin: 0px;
+    border: solid 2px black;
+    width: 120px;
+    }
+
+ .clase{
+    color: black;
+    background-color: green;
+    text-align: end;
+    }
+.atributo{
+    color:white;
+    background-color:goldenrod;
+    }
+.metodo{
+    color: black;
+    background-color: blue;
+    }
+.derecha{
+    text-align: rigth;
+    }

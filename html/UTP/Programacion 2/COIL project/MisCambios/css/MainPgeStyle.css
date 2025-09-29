@@ -1,0 +1,442 @@
+/* general style */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background: #ffffff;
+}
+
+/* side bar style */
+.sidebar {
+    width: 250px;
+    background-color: #f5f5f5;
+    border-right: 1px solid #ddd;
+    padding: 15px;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    color: #333;
+}
+
+/* separation between sections */
+.sidebar h2:not(:first-child) {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd; /* divided line*/
+}
+
+/*styles for the search boxes*/
+.search-box {
+    width: 91%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* unified style for  "View All" and "- All -" */
+.view-all, .dropdown select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.view-all {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.view-all:hover {
+    background-color: #e1e9f5;
+}
+
+.category {
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Triángulos para las categorías */
+.category i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid #555;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    margin-right: 8px;
+    transition: transform 0.3s;
+}
+
+.category.expanded i {
+    transform: rotate(90deg);
+}
+
+/*styles for subcategories*/
+.subcategory {
+    padding-left: 20px;
+    display: none;
+}
+
+.subcategory.visible {
+    display: block;
+}
+
+.subcategory div {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.subcategory div:hover {
+    color: #0066cc;
+}
+
+.patient-item:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el contenido principal y calendario */
+.main {
+    flex: 1;
+    background: transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+nav .addEvent {
+    margin-left: 200px;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+
+.date select {
+    background-color: #fff;
+    color: #0C41FF;
+    font-size: 18px;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.calendar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.week-days, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.week-days div {
+    background-color: #0C41FF;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+.days {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+.days div {
+    min-height: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    border: 1px solid #ddd;
+    color: #777;
+}
+
+.days div.empty {
+    background: #f9f9f9;
+    color: #ccc;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 30vh;
+    }
+
+    .main {
+        width: 100%;
+    }
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: white;
+    width: 30%;
+    height: 90%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Estilos para el modal de citas */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #0C41FF;
+    color: white;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.close-modal {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn, .save-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cancel-btn {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.save-btn {
+    background-color: #0C41FF;
+    color: white;
+}
+
+/* Estilos para el botón de añadir cita */
+.AddEvent {
+    background-color: #0C41FF;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para las citas en el calendario */
+.appointment {
+    background-color: #e1e9f5;
+    border-left: 3px solid #0C41FF;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.appointment-time {
+    font-weight: bold;
+    color: #0C41FF;
+}
+
+.appointment-info {
+    color: #333;
+}
+
+/* Mejoras para los días del calendario */
+.days div {
+    position: relative;
+    padding-top: 25px;
+    overflow-y: auto;
+    max-height: 120px;
+}
+
+.days div .day-number {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Colorear el día actual */
+.days div.today {
+    background-color: #f0f7ff;
+}
+
+/* Días con citas */
+.days div.has-appointments {
+    position: relative;
+}
+
+.days div.has-appointments::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #0C41FF;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.goback{
+    display: flex;
+    cursor:pointer;
+    background-color:#0C41FF;
+    color:white;
+    display:inline-block;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.opendata{
+    display: flex;
+    cursor:pointer;
+    background-color:#0C41FF;
+    color:white;
+    display:inline-block;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
